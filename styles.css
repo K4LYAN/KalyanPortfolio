@@ -630,7 +630,7 @@
         }
         .education-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.797);
             border-color: var(--color-accent);
         }
         .education-card .education-date {
@@ -1146,6 +1146,9 @@
         }
         .footer-cta-content {
             /* Staggered animation children */
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
         .footer-cta-content > * {
             opacity: 0;

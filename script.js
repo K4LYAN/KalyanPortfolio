@@ -57,6 +57,7 @@
 
 
             // --- Music Button Logic ---
+
             try {
                 const musicBtn = document.getElementById('music-toggle-btn');
                 let isPlaying = false;
@@ -80,7 +81,7 @@
                         release: 0.5
                     }
                 }).connect(delay);
-                synth.volume.value = -12; // Lower the volume
+                synth.volume.value = -1; // Lower the volume
 
                 // 2. Create the looping melody
                 const notes = ['C4', 'E4', 'G4', 'B4', 'G4', 'E4'];
@@ -193,14 +194,14 @@
                     subtitle: "CyberSecurity Awareness",
                     description: "Developed a comprehensive, role-based web portal for a cybersecurity awareness program. The platform provides distinct dashboards and functionalities for students, teachers, and administrators to manage courses, track progress, and simulate real-world security scenarios. A key feature is the integration of a CVE (Common Vulnerabilities and Exposures) tracking system to keep users updated on the latest threats, alongside a virtual lab environment using VMs for hands-on practice with OWASP Top 10 vulnerabilities.",
                     tech: ["Java", "Spring Boot", "Spring Security", "JavaScript", "MySQL", "VirtualBox", "OWASP"],
-                    link: "https://github.com/K4LYAN" // Add link to project
+                    link: "https://github.com/K4LYAN/" // Add link to project
                 },
                 project2: {
                     title: "Modern Career",
                     subtitle: "Guidance Platform",
                     description: "Engineered an intelligent career guidance platform designed to replace traditional counseling methods. The system uses a multi-faceted recommendation engine, leveraging collaborative filtering and content-based filtering (NLP) to analyze user profiles, academic performance, and interests. It provides personalized course and career path suggestions, resulting in a 60% boost in user engagement and a 35% increase in course completion rates.",
                     tech: ["Java", "Spring Boot", "Machine Learning", "NLP", "Python", "REST APIs", "React"],
-                    link: "https://github.com/K4LYAN" // Add link to project
+                    link: "https://github.com/K4LYAN/modern-carrier-guidance" // Add link to project
                 }
             };
 
