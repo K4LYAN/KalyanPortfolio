@@ -1,4 +1,4 @@
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
 
         :root {
             --color-black: #0A0A0A;
@@ -385,6 +385,7 @@
         .grid-tile[data-index="3"] { transition-delay: 300ms; }
         .grid-tile[data-index="4"] { transition-delay: 400ms; }
         .grid-tile[data-index="5"] { transition-delay: 500ms; }
+        .grid-tile[data-index="6"] { transition-delay: 600ms; } /* Added for new skills */
 
 
         /* The reveal animation */
@@ -613,6 +614,62 @@
             border-bottom: none;
             margin-bottom: 0;
         }
+
+        /* --- EDUCATION GRID (NEW) --- */
+        .education-grid {
+            display: grid;
+            /* Use auto-fit for responsiveness */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .education-card {
+            /* Re-use grid-tile styles */
+            transition: all 0.3s ease;
+            border-color: #eee; /* Lighter border */
+            background: #fdfdfd; /* Slightly off-white */
+        }
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--color-accent);
+        }
+        .education-card .education-date {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--color-black);
+            opacity: 0.6;
+            margin-bottom: 0.5rem;
+        }
+        .education-card h2 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+            color: var(--color-accent);
+        }
+        .education-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--color-black);
+        }
+        .education-card p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            font-weight: 700;
+            color: var(--color-black);
+            opacity: 0.8;
+        }
+        .education-card span {
+            display: block;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--color-black);
+            margin-top: 1rem;
+        }
+
 
         /* --- ACHIEVEMENTS GRID --- */
         .achievements-grid {
@@ -1314,7 +1371,7 @@
             .tile-features { min-height: 200px; }
             
             /* Make new responsive grids stack on mobile */
-            .achievements-grid, .skills-grid, .blog-grid {
+            .achievements-grid, .skills-grid, .blog-grid, .education-grid { /* Added education-grid */
                 grid-template-columns: 1fr;
             }
 
