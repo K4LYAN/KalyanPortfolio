@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalyan Chavala | Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ======== NAVIGATION (Persistent) ======== -->
+    <nav class="global-nav">
+        <a href="#page-home" class="logo">Kalyan Chavala</a>
+        <div class="nav-links-cluster">
+            <a href="mailto:venkatkalyan437@gmail.com" class="nav-button dark">Let's Talk</a>
+            
+            <button class="nav-button light" id="open-menu-btn">
+                Menu &nbsp; &rarr;
+            </button>
+            
+            <!-- ======== Music Button ======== -->
+            <button class="nav-button light circular-btn" id="music-toggle-btn" aria-label="Play background music">
+                <div class="icon-container">
+                    <!-- Sound Icon -->
+                    <svg class="icon icon-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    </svg>
+                    <!-- Wave Animation -->
+                    <div class="wave-container">
+                        <span class="wave-bar"></span>
+                        <span class="wave-bar"></span>
+                        <span class="wave-bar"></span>
+                        <span class="wave-bar"></span>
+                    </div>
+                </div>
+            </button>
+            <!-- ==================================== -->
+        </div>
+    </nav>
+
+    <!-- ======== PAGE CONTAINER ======== -->
+    <main id="page-container">
+
+        <!-- ======== HOME PAGE ======== -->
+        <div id="page-home" class="page">
+            <!-- ======== HERO ======== -->
+            <section class="hero-section" id="top">
+                <div class="hero-content">
+                    <h1>Security-First<br>Software Engineer.</h1>
+                    <p>
+                        I build and secure complex
+                        systems—from role-based portals
+                        to ML-driven recommendation
+                        engines.
+                    </p>
+                    <a href="#page-projects" class="hero-work-link">View Selected Work</a>
+                </div>
+                <!-- Replaced image container with new panel -->
+                <div class="hero-image-panel">
+                    <!-- Image is now a CSS background -->
+                </div>
+            </section>
+
+            <!-- ======== EXPERIENCE ======== -->
+            <div class="section-title-container">
+                <h3 class="section-title" id="experience">Experience</h3>
+            </div>
+            <section class="grid-tile experience-card" data-index="0">
+                <div class="company">
+                    <h4>Work Based Learning Internship</h4>
+                    <h2>CDAC</h2>
+                    <span>Bangalore, Karnataka</span>
+                    <span>May 2025 - Sept 2025</span>
+                </div>
+                <div class="description">
+                    <ul>
+                        <li>Engineered secure full-stack portals and performed vulnerability assessments on real-time cybersecurity projects.</li>
+                        <li>Contributed to R&D team initiatives, assisting with system design, secure coding, rigorous testing, and documentation.</li>
+                        <li>Provided lab support to 200+ students, conducted hands-on sessions, and mentored peers on coding aligned with OWASP.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ======== ACHIEVEMENTS ======== -->
+            <div class="section-title-container">
+                <h3 class="section-title" id="achievements">Achievements</h3>
+            </div>
+            <section class="achievements-grid">
+                <div class="grid-tile achievement-card" data-index="0">
+                    <h2>First Prize</h2>
+                    <p>Awarded 1st place twice in the college-level Web Development Competition organized by the AICTE Cell, demonstrating superior web development skills.</p>
+                </div>
+                <div class="grid-tile achievement-card" data-index="1">
+                    <h2>Top 10 Finalist</h2>
+                    <p>Outperformed 200,000+ participants in the GUVI Skill-A-Thon to rank in the top 10 for designing the official APSSDC government website.</p>
+                </div>
+                <div class="grid-tile achievement-card" data-index="2">
+                    <h2>Second Prize</h2>
+                    <p>Awarded 2nd prize in a Cyber Security Seminar & Bug Bounty for a comprehensive security presentation and identifying critical application vulnerabilities.</p>
+                </div>
+            </section>
+
+            <!-- ======== SKILLS ======== -->
+            <div class="section-title-container">
+                <h3 class="section-title" id="skills">Technical Skills</h3>
+            </div>
+            <section class="skills-grid">
+                <div class="grid-tile skill-category" data-index="0">
+                    <h4>Security & PenTest</h4>
+                    <ul>
+                        <li>Burp Suite</li>
+                        <li>Nmap</li>
+                        <li>Metasploit</li>
+                        <li>Wireshark</li>
+                        <li>SQLMap</li>
+                        <li>Hydra</li>
+                    </ul>
+                    <span class="decorative-text" aria-hidden="true"></span>
+                </div>
+                <div class="grid-tile skill-category" data-index="1">
+                    <h4>Cloud & Virtualization</h4>
+                    <ul>
+                        <li>Amazon Web Services (AWS)</li>
+                        <li>VirtualBox</li>
+                        <li>noVNC</li>
+                        <li class="spacer">&nbsp;</li> <!--- Spacer -->
+                        <li class="spacer">&nbsp;</li>
+                        <li class="spacer">&nbsp;</li>
+                    </ul>
+                    <span class="decorative-text" aria-hidden="true"></span>
+                </div>
+                <div class="grid-tile skill-category" data-index="2">
+                    <h4>Languages</h4>
+                    <ul>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>JavaScript</li>
+                        <li>HTML/CSS</li>
+                        <li class="spacer">&nbsp;</li>
+                    </ul>
+                    <span class="decorative-text" aria-hidden="true"></span>
+                </div>
+                <div class="grid-tile skill-category" data-index="3">
+                    <h4>Frameworks & Tools</h4>
+                    <ul>
+                        <li>Spring Boot</li>
+                        <li>Figma</li>
+                        <li>REST APIs</li>
+                        <li>Git</li>
+                        <li>Maven</li>
+                        <li class="spacer">&nbsp;</li>
+                    </ul>
+                    <span class="decorative-text" aria-hidden="true"></span>
+                </div>
+            </section>
+
+            <!-- ======== FOOTER (Contact CTA) ======== -->
+            <footer class="footer-cta" id="contact">
+                <div class="footer-cta-content">
+                    <h4>Connect & Contact</h4>
+                    <h2>Let's Make Something Great Together.</h2>
+                    <p>Get in touch if you want to discuss a project, learn more about my methodologies, or just to say hello!</p>
+                </div>
+                <div class="footer-cta-links">
+                    <a href="mailto:venkatkalyan437@gmail.com">venkatkalyan437@gmail.com</a>
+                    <a href="https://linkedin.com/in/venkatkalyanchavala/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/K4LYAN" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </footer>
+        </div> <!-- End #page-home -->
+
+        <!-- ======== PROJECTS PAGE ======== -->
+        <div id="page-projects" class="page">
+            <!-- ======== WORK 01 ======== -->
+            <div class="section-title-container">
+                <a href="#page-home" class="section-back-btn">&larr;</a>
+                <h3 class="section-title" id="work">Selected Work (01)</h3>
+            </div>
+            <section class="work-grid">
+                <!-- Tile 1: Project Title -->
+                <div class="grid-tile tile-title" data-index="0">
+                    <h2>Secure Web Portal</h2>
+                    <h3>CyberSecurity Awareness</h3>
+                </div>
+                <!-- Tile 2: Tech Stack -->
+                <div class="grid-tile tile-stack" data-index="1">
+                    <span>Spring Boot</span>
+                    <span>JavaScript</span>
+                    <span>MySQL</span>
+                </div>
+                <!-- Tile 3: Project Description -->
+                <div class="grid-tile tile-description" data-index="3">
+                    <p>
+                        A secure, role-based portal (Admin, Teacher, Student)
+                        for managing courses, tracking CVEs, and accessing a virtual lab.
+                    </p>
+                </div>
+                <!-- Tile 4: Key Features (Hover Reveal) -->
+                <div class="grid-tile tile-features" data-index="2">
+                    <span class="features-title">&rarr; Key Features</span>
+                    <ul>
+                        <li>Role-Based Access Control</li>
+                        <li>Virtual Lab (VMs)</li>
+                        <li>Live CVE Tracking</li>
+                    </ul>
+                </div>
+                <!-- Tile 5: Call to Action (Accent Color) -->
+                <button class="grid-tile tile-cta" data-index="4" 
+                        data-project-id="project1" 
+                        aria-label="View Source Code for Secure Web Portal">
+                    Source<br>Code
+                </button>
+            </section>
+
+            <!-- ======== WORK 02 ======== -->
+            <div class="section-title-container">
+                <h3 class="section-title">Selected Work (02)</h3>
+            </div>
+            <section class="work-grid"> <!-- Removed class="work-grid-2" -->
+                <!-- Project 2: Modern Career Guidance -->
+                <div class="grid-tile tile-title" data-index="0">
+                    <h2>Modern Career</h2>
+                    <h3>Guidance Platform</h3>
+                </div>
+                <div class="grid-tile tile-stack" data-index="1">
+                    <span>Java</span>
+                    <span>Spring Boot</span>
+                    <span>NLP</span>
+                </div>
+                <!-- Tile 3: Project Description -->
+                <div class="grid-tile tile-description" data-index="3">
+                    <p>
+                        Built a recommendation engine using collaborative filtering and NLP-driven content analysis
+                        to deliver personalized course and career path suggestions.
+                    </p>
+                </div>
+                <!-- Tile 4: Key Features (Hover Reveal) -->
+                <div class="grid-tile tile-features" data-index="2">
+                    <span class="features-title">&rarr; Key Features</span>
+                    <ul>
+                        <li>Collaborative Filtering</li>
+                        <li>Content-Based NLP</li>
+                        <li>Personalized Dashboards</li>
+                    </ul>
+                </div>
+                <button class="grid-tile tile-cta" data-index="5" 
+                        data-project-id="project2"
+                        aria-label="View Source Code for Modern Career Guidance Platform">
+                    Source<br>Code
+                </button>
+            </section>
+
+            <!-- ======== MORE PROJECTS BUTTON ======== -->
+            <div class="more-projects-container">
+                <a href="https://github.com/K4LYAN" target="_blank" rel="noopener noreferrer" class="more-projects-btn">
+                    View More Projects on GitHub
+                </a>
+            </div>
+        </div> <!-- End #page-projects -->
+
+        <!-- ======== BLOG PAGE ======== -->
+        <div id="page-blog" class="page">
+            <div class="section-title-container">
+                <a href="#page-home" class="section-back-btn">&larr;</a>
+                <h3 class="section-title" id="blog">Blog</h3>
+            </div>
+            <section class="blog-grid">
+                <!-- Blog Card 1 -->
+                <a href="#" class="grid-tile blog-card" data-index="0">
+                    <div class="blog-card-image" style="background-image: url('https://placehold.co/600x400/FF6B00/white?text=Post+1&font=inter')"></div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-date">October 28, 2025</span>
+                        <h2>Understanding Spring Security</h2>
+                        <p>A deep dive into setting up role-based access control and JWT authentication in a modern Spring Boot application.</p>
+                        <span class="blog-card-link">Read More &rarr;</span>
+                    </div>
+                </a>
+                <!-- Blog Card 2 -->
+                <a href="#" class="grid-tile blog-card" data-index="1">
+                    <div class="blog-card-image" style="background-image: url('https://placehold.co/600x400/0A0A0A/white?text=Post+2&font=inter')"></div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-date">October 15, 2025</span>
+                        <h2>The Threat of SQL Injection</h2>
+                        <p>Exploring how SQL injection works, why it's so dangerous, and how to effectively prevent it using prepared statements.</p>
+                        <span class="blog-card-link">Read More &rarr;</span>
+                    </div>
+                </a>
+                <!-- Blog Card 3 -->
+                <a href="#" class="grid-tile blog-card" data-index="2">
+                    <div class="blog-card-image" style="background-image: url('https://placehold.co/600x400/f0f0f0/0A0A0A?text=Post+3&font=inter')"></div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-date">September 30, 2025</span>
+                        <h2>My Top 5 PenTesting Tools</h2>
+                        <p>A breakdown of my most-used tools for vulnerability assessment and penetration testing, from Burp Suite to Nmap.</p>
+                        <span class="blog-card-link">Read More &rarr;</span>
+                    </div>
+                </a>
+            </section>
+        </div> <!-- End #page-blog -->
+
+    </main> <!-- End #page-container -->
+
+
+    <!-- ======== FOOTER (Persistent) ======== -->
+    <div class="footer-bottom">
+        <span id="copyright"></span>
+        <!-- <a href="#top">Back to Top &uarr;</a> -->
+    </div>
+
+    <!-- ======== BACK TO TOP (Persistent) ======== -->
+    <a href="#top" id="back-to-top" aria-label="Back to Top">&uarr;</a>
+
+    <!-- ======== MODAL OVERLAY (Persistent) ======== -->
+    <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-content" id="modal-content">
+            <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+            <h2 id="modal-title">Project Title</h2>
+            <h3 id="modal-subtitle">Project Subtitle</h3>
+            <p id="modal-description">Project description goes here.</p>
+            
+            <h4 id="modal-tech-title">Technology Stack</h4>
+            <ul id="modal-tech-list">
+                <!-- <li>Tech</li> -->
+            </ul>
+            
+            <a href="#" id="modal-link" target="_blank" rel="noopener noreferrer">View Source Code</a>
+        </div>
+    </div>
+    
+    <!-- ======== MENU OVERLAY (Persistent) ======== -->
+    <div class="menu-overlay" id="menu-overlay" role="dialog" aria-modal="true">
+        <div class="menu-header">
+            <a href="#page-home" class="menu-logo" id="menu-logo-close">Kalyan Chavala</a>
+            <button class="nav-button light menu-close" id="menu-close-btn">
+                Close &nbsp; &times;
+            </button>
+        </div>
+        <div class="menu-body">
+            <ul class="menu-nav-links">
+                <li><a href="#page-home" class="menu-nav-link">Home</a></li>
+                <li><a href="#page-projects" class="menu-nav-link">Projects</a></li>
+                <li><a href="#page-blog" class="menu-nav-link">Blog</a></li>
+                <li><a href="#experience" class="menu-nav-link">Experience</a></li>
+                <li><a href="#skills" class="menu-nav-link">Skills</a></li>
+            </ul>
+            <ul class="menu-social-links">
+                <li><a href="https://linkedin.com/in/venkatkalyanchavala/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="https://github.com/K4LYAN" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="mailto:venkatkalyan437@gmail.com" class="menu-nav-link">Email</a></li>
+            </ul>
+        </div>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
