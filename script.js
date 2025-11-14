@@ -194,7 +194,7 @@
                     subtitle: "CyberSecurity Awareness",
                     description: "Developed a comprehensive, role-based web portal for a cybersecurity awareness program. The platform provides distinct dashboards and functionalities for students, teachers, and administrators to manage courses, track progress, and simulate real-world security scenarios. A key feature is the integration of a CVE (Common Vulnerabilities and Exposures) tracking system to keep users updated on the latest threats, alongside a virtual lab environment using VMs for hands-on practice with OWASP Top 10 vulnerabilities.",
                     tech: ["Java", "Spring Boot", "Spring Security", "JavaScript", "MySQL", "VirtualBox", "OWASP"],
-                    link: "https://github.com/K4LYAN/" // Add link to project
+                    link: "https://github.com/K4LYAN/Cybersecurity-and-Awareness" // Add link to project
                 },
                 project2: {
                     title: "Modern Career",
