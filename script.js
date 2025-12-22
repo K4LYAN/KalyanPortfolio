@@ -322,3 +322,44 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+// --- Analytics Tracking Logic ---
+function trackEvent(action) {
+    const stats = JSON.parse(localStorage.getItem('kalyan_stats')) || {
+        visits: 0,
+        downloads: 0,
+        logs: []
+    };
+
+    if (action === 'visit') {
+        stats.visits++;
+    } else if (action === 'download') {
+        stats.downloads++;
+    }
+
+    // Add log entry
+    stats.logs.push({
+        action: action,
+        timestamp: new Date().toISOString()
+    });
+
+    // Limit logs to last 50
+    if (stats.logs.length > 50) {
+        stats.logs.shift();
+    }
+
+    localStorage.setItem('kalyan_stats', JSON.stringify(stats));
+}
+
+// Track Page Visit (once per session/refresh)
+if (!sessionStorage.getItem('visited_this_session')) {
+    trackEvent('visit');
+    sessionStorage.setItem('visited_this_session', 'true');
+}
+
+// Track Resume Download
+const downloadLinks = document.querySelectorAll('a[href*="Resume"], a[download]');
+downloadLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        trackEvent('download');
+    });
+});

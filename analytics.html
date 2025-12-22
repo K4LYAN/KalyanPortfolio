@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Analytics | Kalyan Chavala</title>
+
+    <!-- Security Meta Tags -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://placehold.co; connect-src 'self';">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .analytics-container {
+            max-width: 1200px;
+            margin: 120px auto 60px;
+            padding: 0 2rem;
+        }
+
+        .analytics-header {
+            margin-bottom: 4rem;
+            border-bottom: 4px solid var(--color-black);
+            padding-bottom: 2rem;
+        }
+
+        .analytics-title {
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .analytics-subtitle {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.1rem;
+            color: var(--color-black);
+            opacity: 0.7;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .stat-card {
+            background: var(--color-white);
+            border: 3px solid var(--color-black);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 8px 8px 0px var(--color-black);
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .stat-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px var(--color-black);
+        }
+
+        .stat-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--color-gray);
+        }
+
+        .stat-value {
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 1;
+            color: var(--color-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-description {
+            font-size: 1rem;
+            opacity: 0.8;
+            font-weight: 500;
+        }
+
+        .activity-log {
+            background: var(--color-white);
+            border: 3px solid var(--color-black);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 8px 8px 0px var(--color-black);
+        }
+
+        .log-header {
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--color-black);
+        }
+
+        .log-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .log-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+        }
+
+        .log-item:last-child {
+            border-bottom: none;
+        }
+
+        .log-time {
+            color: var(--color-gray);
+        }
+
+        .log-action {
+            font-weight: 700;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--color-black);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .back-link:hover {
+            color: var(--color-accent);
+        }
+
+        @media (max-width: 768px) {
+            .analytics-title {
+                font-size: 2.5rem;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .log-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+            }
+
+            .log-time {
+                font-size: 0.8rem;
+                opacity: 0.7;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ======== NAVIGATION ======== -->
+    <nav class="global-nav">
+        <a href="index.html" class="logo">Kalyan Chavala</a>
+        <div class="nav-links-cluster">
+            <a href="index.html" class="nav-button light">Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="analytics-container">
+        <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+
+        <header class="analytics-header">
+            <h1 class="analytics-title">Live Analytics</h1>
+            <p class="analytics-subtitle">Real-time engagement metrics simulation</p>
+        </header>
+
+        <div class="dashboard-grid">
+            <!-- Card 1: Page Visits -->
+            <div class="stat-card">
+                <div>
+                    <div class="stat-label">Total Page Visits</div>
+                    <div class="stat-value" id="visit-count">0</div>
+                </div>
+                <div class="stat-description">Cumulative views tracked via browser storage</div>
+            </div>
+
+            <!-- Card 2: Resume Downloads -->
+            <div class="stat-card">
+                <div>
+                    <div class="stat-label">Resume Downloads</div>
+                    <div class="stat-value" id="download-count">0</div>
+                </div>
+                <div class="stat-description">Total PDF downloads initiated</div>
+            </div>
+        </div>
+
+        <!-- Activity Log -->
+        <div class="activity-log">
+            <div class="log-header">Recent Activity</div>
+            <ul class="log-list" id="activity-list">
+                <li class="log-item">
+                    <span class="log-action">System Init</span>
+                    <span class="log-time">Now</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Inline script to render the analytics data from localStorage
+        document.addEventListener('DOMContentLoaded', () => {
+            const visitCountEl = document.getElementById('visit-count');
+            const downloadCountEl = document.getElementById('download-count');
+            const activityListEl = document.getElementById('activity-list');
+
+            // Store previous values to prevent unnecessary animations
+            let prevVisits = 0;
+            let prevDownloads = 0;
+
+            function loadAndRenderStats() {
+                // 1. Get Simulation Data
+                const stats = JSON.parse(localStorage.getItem('kalyan_stats')) || {
+                    visits: 0,
+                    downloads: 0,
+                    logs: []
+                };
+
+                // 2. Animate Numbers only if changed
+                if (stats.visits !== prevVisits) {
+                    animateValue(visitCountEl, prevVisits, stats.visits, 1000);
+                    prevVisits = stats.visits;
+                }
+
+                if (stats.downloads !== prevDownloads) {
+                    animateValue(downloadCountEl, prevDownloads, stats.downloads, 1000);
+                    prevDownloads = stats.downloads;
+                }
+
+                // 3. Render Logs
+                renderLogs(stats.logs);
+            }
+
+            function renderLogs(logs) {
+                if (logs.length > 0) {
+                    activityListEl.innerHTML = '';
+                    // Show last 5 logs
+                    logs.slice().reverse().slice(0, 5).forEach(log => {
+                        const li = document.createElement('li');
+                        li.className = 'log-item';
+                        li.innerHTML = `
+            <span class="log-action">${log.action}</span>
+            <span class="log-time">${new Date(log.timestamp).toLocaleTimeString()}</span>
+                        `;
+                        activityListEl.appendChild(li);
+                    });
+                }
+            }
+
+            // Number Animation Utility
+            function animateValue(obj, start, end, duration) {
+                if (start === end) {
+                    obj.innerHTML = end;
+                    return;
+                }
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    obj.innerHTML = Math.floor(progress * (end - start) + start);
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            }
+
+            // Initial Load
+            loadAndRenderStats();
+
+            // Auto-Refresh every 2 seconds
+            setInterval(loadAndRenderStats, 2000);
+
+            // Listen for updates from other tabs
+            window.addEventListener('storage', (e) => {
+                if (e.key === 'kalyan_stats') {
+                    loadAndRenderStats();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
