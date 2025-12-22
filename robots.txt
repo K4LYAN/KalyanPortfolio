@@ -1,0 +1,24 @@
+# robots.txt for Kalyan Chavala Portfolio
+# This file tells search engines which parts of the site they can crawl
+
+# Allow all search engines to crawl the entire site
+User-agent: *
+Allow: /
+
+# Disallow crawling of specific file types (if needed in future)
+# Disallow: *.json$
+# Disallow: *.xml$
+
+# Sitemap location - UPDATE WITH YOUR ACTUAL DOMAIN
+Sitemap: https://kalyan.run.place/sitemap.xml
+
+# Crawl delay (optional, use only if server resources are limited)
+# Crawl-delay: 1
+
+# Specific instructions for Google Bot (optional)
+User-agent: Googlebot
+Allow: /
+
+# Specific instructions for Bing Bot (optional)
+User-agent: Bingbot
+Allow: /

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- Main Portfolio Page -->
+    <url>
+        <loc>https://kalyan.run.place/</loc>
+        <lastmod>2025-12-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://kalyan.run.place/assets/profile.webp</image:loc>
+            <image:title>Kalyan Chavala - Software Engineer</image:title>
+            <image:caption>Professional portfolio photo of Kalyan Chavala</image:caption>
+        </image:image>
+    </url>
+        
+    <!-- Resume PDF -->
+    <url>
+        <loc>https://kalyan.run.place/ChavalaVenkatKalyan_Resume.pdf</loc>
+        <lastmod>2025-12-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+</urlset>

@@ -1,0 +1,335 @@
+/* ============================================
+   BRUTALIST LOADER (CINEMATIC)
+   Pure Black & Orange // Industrial Aesthetic
+   ============================================ */
+
+.brutalist-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* Transparent bg because curtains handle the black */
+    background-color: transparent;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* No fade out on container, curtains animate out */
+    pointer-events: all;
+}
+
+.brutalist-loader.loaded {
+    pointer-events: none;
+    transition-delay: 1s;
+    /* Wait for curtains */
+}
+
+/* --- CURTAIN REVEAL MECHANISM --- */
+.loader-curtain {
+    position: absolute;
+    top: 0;
+    width: 50.5%;
+    /* Slight overlap */
+    height: 100%;
+    background: #0A0A0A;
+    z-index: 1;
+    transition: transform 1.2s cubic-bezier(0.76, 0, 0.24, 1);
+    will-change: transform;
+}
+
+.loader-curtain.left {
+    left: 0;
+    border-right: 1px solid #1a1a1a;
+}
+
+.loader-curtain.right {
+    right: 0;
+    border-left: 1px solid #1a1a1a;
+}
+
+/* Exit State: Split Screen */
+.brutalist-loader.loaded .loader-curtain.left {
+    transform: translateX(-100%);
+}
+
+.brutalist-loader.loaded .loader-curtain.right {
+    transform: translateX(100%);
+}
+
+/* Grid Overlay - Subtle Structure (Attached to curtains?) 
+   Actually better to hide it on load
+*/
+.loader-grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 107, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 107, 0, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    opacity: 0.3;
+    z-index: 2;
+    transition: opacity 0.5s ease;
+}
+
+.brutalist-loader.loaded .loader-grid-overlay {
+    opacity: 0;
+}
+
+/* Main Content Container */
+.loader-content {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    width: 90%;
+    text-align: center;
+    /* Exit animation for content: Scale down + Fade */
+    transition: all 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.brutalist-loader.loaded .loader-content {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+/* Logo - Blocky & Bold */
+.loader-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    margin-bottom: 4rem;
+}
+
+.logo-block {
+    font-family: 'Arial Black', 'Helvetica', sans-serif;
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 0.9;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    display: block;
+    /* Kinetic Entry */
+    animation: revealUp 0.8s cubic-bezier(0.2, 1, 0.2, 1) backwards;
+}
+
+.logo-block-accent {
+    color: #FF6B00;
+    animation-delay: 0.1s;
+}
+
+@keyframes revealUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px) skewY(10deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) skewY(0);
+    }
+}
+
+/* Main Message */
+.loader-message {
+    margin-bottom: 5rem;
+}
+
+.loader-heading {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    animation: fadeIn 1s ease 0.3s backwards;
+}
+
+.loader-subtext {
+    font-family: 'Courier New', monospace;
+    font-size: clamp(0.8rem, 1.5vw, 1.1rem);
+    letter-spacing: 0.2em;
+    color: #FF6B00;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    /* Blinking Cursor look */
+    border-right: 3px solid #FF6B00;
+    display: inline-block;
+    padding-right: 5px;
+    animation: blinkCursor 0.8s steps(2) infinite;
+}
+
+@keyframes blinkCursor {
+
+    0%,
+    100% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #FF6B00;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        filter: blur(10px);
+    }
+
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* Progress Bar Section */
+.loader-progress-wrapper {
+    max-width: 500px;
+    margin: 0 auto 3rem;
+    animation: slideUp 0.8s cubic-bezier(0.2, 1, 0.2, 1) 0.5s backwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    color: #888;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.progress-number {
+    color: #FF6B00;
+    font-weight: 900;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 4px;
+    /* Thinner, sleeker */
+    background-color: #222;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #FF6B00;
+    position: relative;
+    /* Hard edge or soft? let's go sharp */
+    box-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
+}
+
+/* Footer Status */
+.loader-footer {
+    animation: fadeIn 1s ease 0.7s backwards;
+}
+
+.loader-status {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    color: #555;
+    text-transform: uppercase;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablet (768px) */
+@media (max-width: 768px) {
+    .loader-logo {
+        margin-bottom: 3rem;
+    }
+
+    .logo-block {
+        font-size: clamp(2.5rem, 8vw, 5rem);
+        letter-spacing: -1px;
+    }
+
+    .loader-heading {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .loader-subtext {
+        font-size: 0.9rem;
+    }
+
+    .loader-progress-wrapper {
+        width: 80%;
+    }
+}
+
+/* Mobile (480px) */
+@media (max-width: 480px) {
+    .logo-block {
+        font-size: 14vw;
+        /* Massive relative size for impact */
+        line-height: 0.85;
+        letter-spacing: -1px;
+    }
+
+    .loader-message {
+        margin-bottom: 3rem;
+    }
+
+    .loader-heading {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .loader-subtext {
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+    }
+
+    .loader-progress-wrapper {
+        width: 85%;
+        margin-bottom: 2rem;
+    }
+
+    /* Ensure curtains cover full height on mobile browsers */
+    .loader-curtain {
+        height: 100vh;
+        height: 100dvh;
+        /* Dynamic viewport height */
+    }
+}
+
+/* Small Mobile (360px) */
+@media (max-width: 360px) {
+    .logo-block {
+        font-size: 12vw;
+    }
+
+    .loader-heading {
+        font-size: 0.9rem;
+    }
+
+    .progress-label {
+        font-size: 0.7rem;
+    }
+}
